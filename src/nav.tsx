@@ -7,15 +7,23 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import x from './icon/money.svg';
+import y from './icon/statistic.svg';
+import z from './icon/tag.svg';
+console.log(x,y,z)
 const NavWrapper = styled.div`
 box-shadow:0 0 3px rgba(0,0,0,0.25);
-line-height:24px;
+line-height:20px;
 >ul{
   display:flex;
+  justify-content:space-between;
   >li{
     width:33.3333%;
     text-align:center;
-    padding:16px;
+    padding:5px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
 }
 `;
@@ -24,13 +32,31 @@ const Nav = () => {
         <NavWrapper>
             <ul>
                 <li>
-                    <Link to="/tags">标签页</Link>
+                    
+                    <Link to="/tags">
+                        <svg className="icon">
+                        <use xlinkHref = "#tag" />
+                        </svg>
+                        <div>标签页</div>
+                        </Link>
                 </li>
                 <li>
-                    <Link to="/money">记账页</Link>
+                    
+                    <Link to="/money">
+                        <svg className="icon">
+                        <use xlinkHref = "#money" />
+                    </svg>
+                    <div>记账页</div>    
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/statistics">统计页</Link>
+                    
+                    <Link to="/statistics">
+                        <svg className="icon">
+                        <use xlinkHref = "#statistic" />
+                        </svg>
+                        <div>统计页</div>
+                        </Link>
                 </li>
             </ul>
         </NavWrapper>
