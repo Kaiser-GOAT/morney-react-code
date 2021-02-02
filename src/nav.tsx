@@ -8,11 +8,9 @@ import {
   Redirect,
   NavLink
 } from "react-router-dom";
-import x from './icon/money.svg';
-import y from './icon/statistic.svg';
-import z from './icon/tag.svg';
+
 import Icon from './icons';
-console.log(x,y,z)
+
 const NavWrapper = styled.div`
 box-shadow:0 0 3px rgba(0,0,0,0.25);
 line-height:20px;
