@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ProgressPlugin } from 'webpack';
+import { useTags } from '../../useTags';
 const Wrapper = styled.section`
 background:#FFFFFF;
 flex-grow:1;
@@ -38,7 +39,7 @@ type Props = {
     onChange:(selected:string[])=>void
 }
 const TagsSection: React.FC<Props> = (props) => {
-    const [tags, setTags] = useState<string[]>(['衣', '食', '住', '行']);
+    const{tags,setTags} = useTags()
     const selectedTag = props.value;
         const AddTag = () => {
         const TagName = window.prompt('新添加的标签为')
