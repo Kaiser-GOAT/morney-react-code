@@ -10,6 +10,9 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import { Button } from '../Button';
+import { Center } from './Center';
+import { Space } from './Space';
 const TagList = styled.ol`
     font-size:16px;
     background:white;
@@ -31,23 +34,9 @@ const TagList = styled.ol`
     }
 
 `;
-const Button = styled.button`
-    font-size:18px;
-    border:none;
-    padding:8px 12px;
-    border-radius:4px;
-    background:#f90;
-    color:white;
-`;
-const Center = styled.div`
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-`;
-const Space = styled.div`
-    height:16px;
-`;
+
+
+
 function Tags() {
     const { tags } = useTags();
   return (
@@ -56,7 +45,7 @@ function Tags() {
           
               {tags.map(tag =>
                   <li key={tag.id}>
-                      <Link to={'/tags/' + tag}>
+                      <Link to={'/tags/' + tag.id}>
                       <span className="oneLine">
                           {tag.name}
                           </span>

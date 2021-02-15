@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ProgressPlugin } from 'webpack';
+import {createId} from '../../lib/createid'
 import { useTags } from '../../useTags';
+
 const Wrapper = styled.section`
 background:#FFFFFF;
 flex-grow:1;
@@ -44,7 +46,7 @@ const TagsSection: React.FC<Props> = (props) => {
         const AddTag = () => {
         const TagName = window.prompt('新添加的标签为')
         if (TagName !== null) {
-            setTags([...tags, { id:Math.random(),name:TagName}])
+            setTags([...tags, { id:createId(),name:TagName}])
         }
     }
     const toggleTag = (tagId:number) => {
