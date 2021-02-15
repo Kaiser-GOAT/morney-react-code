@@ -30,9 +30,9 @@ body {
   width: 32px;
   height: 32px;
 }
-button {
-  font-family: inherit;
-  border: none;
+button,
+input {
+  font: inherit;
 }
 :focus {
   outline: none;
