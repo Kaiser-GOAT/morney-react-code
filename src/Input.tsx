@@ -1,40 +1,30 @@
-import styled from "styled-components";
-
-
+import React from 'react';
+import styled from 'styled-components';
 
 const Label = styled.label`
     display:flex;
-    align-items:center;
-    >span{
-        margin-right:16px;
-        white-space:nowrap;
-    };
-        input{
-            display:block;
-            width:100%;
-            height:44px;
-            background:none;
-            border:none;        
+    align-items: center;
+    > span { margin-right: 16px; white-space: nowrap; }
+    > input {
+      display:block;
+      width: 100%;
+      height: 44px;
+      background: none;
+      border: none;
     }
-
 `;
 
 type Props = {
-    label: string;
+  label: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 const Input: React.FC<Props> = (props) => {
-    const { label,children, ...rest } = props;
-    return (
- 
-        <Label>
-            <span>{props.label}</span>
-                <input type="text" placeholder="在这里添加备注" 
-                defaultValue={props.defaultValue}
-                onBlur={props.onBlur}
-                {...rest}
-                />
-        </Label>
-        
-    );
-}
-export { Input };
+  const {label, children, ...rest} = props;
+  return (
+    <Label>
+      <span>{props.label}</span>
+      <input {...rest} />
+    </Label>
+  );
+};
+
+export {Input};

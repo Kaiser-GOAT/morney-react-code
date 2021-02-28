@@ -1,5 +1,5 @@
 
-import { useParams } from "react-router-dom"
+import { useParams , useHistory } from "react-router-dom"
 import { useTags } from "../useTags"
 import Layout from '../layout'
 import Icon from "../icons"
@@ -29,28 +29,32 @@ const Tag: React.FC = (props) => {
     const { findTag,updateTag,deleteTag } = useTags()
     let { id:idString } = useParams<Params>();
     const tag = findTag(parseInt(idString))
-    const tagContent = (tag: { id: number;name:string})=>(
-    <div>
-               <InputWrapper>
+    const tagContent = (tag: { id: number; name: string }) => (
+        <div>
+            <InputWrapper>
                 <Input label='标签名' type='text' placeholder='标签名'
                     value={tag.name}
                     onChange={(e) => {
                         updateTag(tag.id, { name: e.target.value });
                     }}
                 />
-                </InputWrapper>
+            </InputWrapper>
             <Center>
                 <Space />
                 <Space />
                 <Space />
-                    <Button onClick={()=>deleteTag(tag.id)}>删除标签</Button>
-                </Center>
-            </div>
-)
+                <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
+            </Center>
+        </div>
+    );
+    const history = useHistory();
+    const onClickBack = () => {
+        history.goBack()
+    }
     return (
         <Layout>
             <Topbar>
-            <Icon name="left" />
+                <Icon name="left" onClick={onClickBack}/>
                 <span>编辑标签</span>
                 <Icon />
             </Topbar>
