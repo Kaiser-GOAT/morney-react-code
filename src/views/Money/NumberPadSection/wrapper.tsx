@@ -17,6 +17,7 @@ flex-direction:column;
         float:left;
         width:25%;
         height:64px;
+        border:none;
         &.ok{
             height:128px;
             float:right;

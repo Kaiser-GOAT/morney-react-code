@@ -16,6 +16,8 @@ import {Tag} from './views/tag'
 const AppWrapper = styled.div`
 color:#333;
 background:#f5f5f5;
+max-width:520px;
+margin:0 auto;
 `;
 function App() {
   return (
